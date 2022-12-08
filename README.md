@@ -1,4 +1,4 @@
-![Github CI/CD](https://github.com/anton1202-py/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?event=workflow)
+![Github CI/CD](https://github.com/anton1202-py/yamdb_final/status/workflows/yamdb_workflow.yml/badge.svg?event=workflow)
 
 # yamdb_final
 
