@@ -1,4 +1,5 @@
-https://github.com/anton1202/yamdb_final/.githab/workflows/yamdb_workflow.yml/badge.svg
+![Github CI/CD](https://img.shields.io/github/workflow/status/anton1202-py/yamdb_final/yamdb_workflow)
+
 # yamdb_final
 
 Автор проекта: Кузнецов Антон
