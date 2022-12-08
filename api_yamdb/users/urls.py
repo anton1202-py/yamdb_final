@@ -1,7 +1,6 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-
-from users.views import signup_view, confirmation_view, UserViewSet
+from users.views import UserViewSet, confirmation_view, signup_view
 
 app_name = 'users'
 

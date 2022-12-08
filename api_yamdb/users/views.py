@@ -8,7 +8,6 @@ from rest_framework import response, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
-
 from users.models import User
 from users.permissions import AdminPermissions
 from users.serializers import (AdminUserSerializer, AuthentificationSerializer,
@@ -32,16 +31,15 @@ def signup_view(request):
             f'{settings.MAILING_EMAIL}',
             [email]
         )
-        resp = response.Response(
+        response.Response(
             data=serializer.data,
             status=status.HTTP_200_OK
         )
     except SMTPResponseException:
-        resp = response.Response(
+        return response.Response(
             data={'error': "Не получилось отправить эмейл"},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
-    return resp
 
 
 @api_view(['POST'])
@@ -58,11 +56,10 @@ def confirmation_view(request):
             status=status.HTTP_400_BAD_REQUEST
         )
     token = user.token
-    resp = response.Response(
+    return response.Response(
         data={'access': str(token)},
         status=status.HTTP_200_OK
     )
-    return resp
 
 
 class UserViewSet(viewsets.ModelViewSet):
