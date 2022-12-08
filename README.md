@@ -1,4 +1,4 @@
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![Build Status](https://github.com/anton1202-py/yamdb_final/workflows/ru/badge.svg)](https://github.com/anton1202-py/yamdb_final/workflows/status/yamdb_workflow.yml)
 
 # yamdb_final
 
