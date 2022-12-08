@@ -1,4 +1,4 @@
-![Github CI/CD](https://img.shields.io/github/workflow/status/anton1202-py/yamdb_final/yamdb_workflow)
+![example workflow](https://github.com/anton1202-py/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)
 
 # yamdb_final
 
