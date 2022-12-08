@@ -28,10 +28,6 @@ jobs:
         # запуск проверки проекта по flake8
         python -m flake8
         python -m pytest
-        # перейти в папку, содержащую manage.py — 
-        #<корневая_папка_infra_actions>/<папка_проекта>/manage.py
-        cd yamdb_final/
-        python -m pytest
 
 # Сразу после них добавьте новую задачу: деплой приложения
   build_and_push_to_docker_hub:
