@@ -1,6 +1,6 @@
 name: Django-app workflow
 
-on: [push]
+on: [push, push branches: [master]]
 
 jobs:
   tests:
@@ -34,13 +34,10 @@ jobs:
         python -m pytest
 
 
-on:
-  push:
-    branches: [master]
-
-jobs:
+# Сразу после них добавьте новую задачу: деплой приложения
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
+    if: github.event_name == push branches: [master]
     runs-on: ubuntu-latest
     needs: tests
     steps:
@@ -64,6 +61,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/infra_actions:latest
   deploy:
+    if: github.event_name == push branches: [master]
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
@@ -84,9 +82,10 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            sudo docker compose up -d 
+            sudo docker-compose up -d 
 
   send_message:
+    if: github.event_name == push branches: [master]
     runs-on: ubuntu-latest
     needs: deploy
     steps:
