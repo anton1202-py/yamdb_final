@@ -68,8 +68,6 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker-compose stop
-            sudo docker-compose rm web
-            sudo docker-compose stop
             sudo docker-compose rm -f web
             sudo docker image rm anton1202/infra_yamdb
             sudo docker-compose pull
