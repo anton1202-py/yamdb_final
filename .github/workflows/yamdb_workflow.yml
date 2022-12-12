@@ -54,7 +54,7 @@ jobs:
         with:
           context: api_yamdb/
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_2:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_3:latest
   
   deploy:
     runs-on: ubuntu-latest
@@ -70,7 +70,7 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm -f web
-            sudo docker image rm -f anton1202/yamdb_2:latest
+            sudo docker image rm -f anton1202/yamdb_3:latest
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
