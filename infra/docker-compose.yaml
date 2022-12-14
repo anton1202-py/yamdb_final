@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
   web:
-    build: anton1202/yamdb_3
+    image: anton1202/yamdb_3
     restart: always
     volumes:
       - static_value:/app/static/
