@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@anton1202-py 
-anton1202-py
-/
-api_yamdb
-Public
-generated from yandex-praktikum/api_yamdb
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-api_yamdb/api_yamdb/static/redoc.yaml
-@anton1202-py
-anton1202-py Initial commit
-Latest commit 604fd8a on Sep 5
- History
- 1 contributor
-1263 lines (1194 sloc)  40.2 KB
-
 openapi: 3.0.2
 info:
   title: 'YaMDb API'
@@ -1246,18 +1215,3 @@ components:
       description: Используется аутентификация с использованием JWT-токенов
       name: Bearer
       in: header
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-api_yamdb/redoc.yaml at master · anton1202-py/api_yamdb
